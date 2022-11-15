@@ -44,6 +44,7 @@ class MainActivity : AppCompatActivity() {
         registerReceiver(receiver, IntentFilter(DownloadManager.ACTION_DOWNLOAD_COMPLETE))
 
         custom_button.setOnClickListener {
+            custom_button.changeButtonState(ButtonState.Loading)
             Toast.makeText(this@MainActivity, "Download started", Toast.LENGTH_SHORT).show()
             DownloadUtils.download(this, URL)
         }
@@ -61,6 +62,7 @@ class MainActivity : AppCompatActivity() {
                     id,
                     "PICTURE"
                 )
+                custom_button.changeButtonState(ButtonState.Completed)
             } else {
                 Toast.makeText(this@MainActivity, "DONE FAIL", Toast.LENGTH_LONG).show()
                 notificationManager.sendNotification(
@@ -70,13 +72,14 @@ class MainActivity : AppCompatActivity() {
                     id,
                     "PICTURE"
                 )
+                custom_button.changeButtonState(ButtonState.Completed)
             }
         }
     }
 
     companion object {
         private const val URL =
-            "https://p.turbosquid.com/ts-thumb/Kw/Wf9h5Q/4Mak7F9o/1/jpg/1552159621/600x600/fit_q87/253a0549c698f267266e79ae2eba7d7795b239b4/1.jpg"
+            "https://github.com/udacity/nd940-c3-advanced-android-programming-project-starter/archive/refs/heads/master.zip"
     }
 
 }

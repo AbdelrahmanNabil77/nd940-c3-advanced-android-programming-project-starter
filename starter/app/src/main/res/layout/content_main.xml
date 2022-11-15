@@ -17,6 +17,11 @@
         android:layout_height="60dp"
         android:layout_margin="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:loadingDefaultBackgroundColor="?attr/colorPrimary"
+        app:loadingBackgroundColor="?attr/colorPrimaryDark"
+        app:loadingDefaultText="Download"
+        app:loadingText="We are loading"
+        app:loadingTextColor="@color/white"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
