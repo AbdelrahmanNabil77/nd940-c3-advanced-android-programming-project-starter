@@ -40,7 +40,10 @@ fun NotificationManager.sendNotification(
         .setContentText(messageBody)
         .setContentIntent(contentPendingIntent)
         .setAutoCancel(true)
-        .setPriority(NotificationCompat.PRIORITY_HIGH)
+        .setPriority(NotificationCompat.PRIORITY_DEFAULT)
+        .addAction(R.drawable.ic_baseline_arrow_downward_24,
+        "check the status",
+        contentPendingIntent)
 
     notify(NOTIFICATION_ID, builder.build())
 }
@@ -50,7 +53,7 @@ fun NotificationManager.createChannel(context: Context, channelId: String, chann
         val notificationChannel = NotificationChannel(
             channelId,
             channelName,
-            NotificationManager.IMPORTANCE_HIGH
+            NotificationManager.IMPORTANCE_DEFAULT
         )
         notificationChannel.enableVibration(true)
 

@@ -23,7 +23,7 @@
         android:id="@+id/rg_download_choices"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="5dp"
+        android:layout_marginTop="10dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/iv_download_image">
 
@@ -31,17 +31,20 @@
             android:id="@+id/rb_glide"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="An image loading and caching library for Android"/>
+            style="@style/textViewRadioButton"
+            android:text="Glide: An image loading and caching library for Android"/>
         <RadioButton
             android:id="@+id/rb_load_app"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Load App - Current repository by udacity"/>
+            style="@style/textViewRadioButton"
+            android:text="Udacity App: Load App - Current repository by udacity"/>
         <RadioButton
             android:id="@+id/rb_retrofit"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="A type-safe HTTP client for Android and the JVM"/>
+            style="@style/textViewRadioButton"
+            android:text="Retrofit: A type-safe HTTP client for Android and the JVM"/>
     </RadioGroup>
 
     <com.udacity.LoadingButton
@@ -52,7 +55,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/rg_download_choices"
         app:loadingBackgroundColor="?attr/colorPrimaryDark"
         app:loadingDefaultBackgroundColor="?attr/colorPrimary"
         app:loadingDefaultText="Download"
